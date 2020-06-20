@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body onload="myFunction()">
+    <!-- preloader start -->
+
+    <div id="loading"></div>
+
+    <!-- preloader end -->
+
+    <!-- page-content start -->
+    <div class="very-specific-design" id="very-specific-design">
+        <div class="mb-3 clearfix">
+            <div class="float-left">
+                <h5 class="mt-2">What's in the basket? Choose and write.</h5>
+            </div>
+            <div class="float-right icon-click" data-toggle="modal" data-target="#helpexample">
+                <img src="http://educationalrc.org/tasks/4/assets/images/help_icon.png" class="w-75">
+            </div>
+            <div class="float-right mr-2 icon-click"  data-toggle="modal" data-target="#helpexample">
+                <img src="http://educationalrc.org/tasks/4/assets/images/resourse_icon.png" class="w-75">
+            </div>
+        </div>
+        <div class="inner-div ml-2 mr-2">
+            <div class="itemContainer text-center">
+                <div class="questionContainer mt-2 mb-3">
+                    <span class="question  " draggable="true" ondragstart="drag(event)" id="scissors">scissors</span>
+                    <span class="question " draggable="true" ondragstart="drag(event)" id="eraser">eraser</span>
+                    <span class="question " draggable="true" ondragstart="drag(event)" id="ruler">ruler</span>
+                    <span class="question " draggable="true" ondragstart="drag(event)" id="bag">bag</span><br>
+                    <span class="question " draggable="true" ondragstart="drag(event)" id="pencil case">pencil case</span>
+                    <span class="question " draggable="true" ondragstart="drag(event)" id="pencil">pencil</span>
+                    <span class="question " draggable="true" ondragstart="drag(event)" id="book">book</span>
+                    <span class="question " draggable="true" ondragstart="drag(event)" id="pen">pen</span>
+                </div>
+                <div class="second-part mt-3">
+                    <div class="text-left">
+                        <div class="my-row" style="position:relative;top:140px;width: 100%;">
+                            <div class="my-col-4 mt-5 ">
+                                <div class="option  " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                <div class="option  mt-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                            </div>
+                            <div class="my-col-4 mb-4 ">
+                                <div class="option " ondrop="drop(event)" ondragover="allowDrop(event)"
+                                    style="position: relative;top: 70%;"></div>
+                            </div>
+                            <div class="my-col-4 ml-2 mt-5 ">
+                                <div class="option " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                <div class="option mt-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <audio id="correct-audio">
+                <source src="correct-sound.wav" type="audio/ogg">
+            </audio>
+            <audio id="incorrect-audio">
+                <source src="incorrect-sound.wav" type="audio/ogg">
+            </audio>
+        </div>
+        <!-- pagecontent  end -->
+        <!-- footer start -->
+        <div class="row" style="background-color: #deecf6;">
+            <div class="col-6 text-left ">
+                <img class="m-2 " src="http://educationalrc.org/tasks/4/assets/images/replay_icon.png"
+                    alt="clear answer" id="clear-answer">
+            </div>
+            <div class="col-6 text-left">
+                <img class="m-2" src="http://educationalrc.org/tasks/4/assets/images/showAns_icon.png" alt="show answer"
+                    id="show-answer">
+            </div>
+        </div>
+        <!-- footer end -->
+    </div>
+
+  <div class="modal fade" id="helpexample" tabindex="-1" role="dialog" aria-labelledby="helpexampleTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modaltitle">Can I Help You !!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          welcome my firend,<br>
+          you can write what you found in this basket by two ways.<br>
+          first way : click on the word and click in the input below.<br>
+          second way: drag the word and drop in the input below.<br>
+          you will know if your answer is right or wrong, thanks alot for your time hope you enjoy.
+        </div>
+        <div class="footer ml-3">
+            <span>This game is programmed by micheal abid fekry</span><br>
+            <span>Gmail: michealabidfekry@gmail.com</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="js/mine.js"></script>
+
+</body>
+
+</html>
